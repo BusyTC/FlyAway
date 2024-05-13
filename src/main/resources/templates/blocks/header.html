@@ -12,11 +12,33 @@
                 <li><a href="/Features" class="nav-link px-2">Features</a></li>
             </ul>
 
-            <div class="col-md-3 text-end">
-                <form action="Login">
-                    <button type="submit" class="btn btn-outline-primary me-2">Login</button>
+
+            <div class="col-md-3 text-end" >
+                <p id="qaws"></p>
+                <form action="Login" name="inout">
+                    <button type="submit" id="inoutbutton" class="btn btn-outline-primary me-2">Login</button>
                 </form>
             </div>
         </header>
     </div>
+    <script>
+        function listCookies() {
+            var theCookies = document.cookie.split(';');
+            var aString = '';
+            for (var i = 1 ; i <= theCookies.length; i++) {
+            aString += i + ' ' + theCookies[i-1] + "\n";
+            }
+        return aString;
+        }
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) {
+                document.inout.action = "Logout";
+                document.getElementById("inoutbutton").innerHTML = "Logout";
+                return parts.pop().split(';').shift();
+            }
+        }
+        document.getElementById("qaws").innerHTML = getCookie("account");
+    </script>
 </div>
