@@ -8,8 +8,9 @@
             </div>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
-                <li><a href="/Features" class="nav-link px-2">Features</a></li>
+                <li><a href="/" class="nav-link px-2">Главная</a></li>
+                <li><a href="/ChooseTicket" class="nav-link px-2">Выбрать билет</a></li>
+                <li><a href="/Features" class="nav-link px-2">Ваши билеты</a></li>
             </ul>
 
 
@@ -39,6 +40,6 @@
                 return parts.pop().split(';').shift();
             }
         }
-        document.getElementById("qaws").innerHTML = getCookie("account");
+        getCookie("account");
     </script>
 </div>

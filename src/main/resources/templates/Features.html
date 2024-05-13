@@ -10,11 +10,13 @@
 <header th:insert="blocks/header :: header"></header>
 
 <div class="container mt-5">
-    <h1>FEATURES</h1>
-    <div th:each="el : ${clientRS}" class="alert alert-info mt-2">
-        <h3 th:text="${el.name}"></h3>
-        <p th:text="${el.surname}"></p>
+    <h1>Ваши билеты:</h1>
+    <div th:each="el : ${users}" class="alert alert-info mt-2">
+        <h3 th:text="${el.first_name}"></h3>
+        <p th:text="${el.last_name}"></p>
     </div>
 </div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
 </body>
 </html>

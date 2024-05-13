@@ -38,10 +38,8 @@ public class LoginController extends HttpServlet {
         if (oldSession != null) {
             oldSession.invalidate();
         }
-        //generate a new session
         HttpSession newSession = request.getSession(true);
 
-        //setting session to expiry in 5 mins
         newSession.setMaxInactiveInterval(5*60);
 
         Cookie message = new Cookie("account", tUser.getId().toString());

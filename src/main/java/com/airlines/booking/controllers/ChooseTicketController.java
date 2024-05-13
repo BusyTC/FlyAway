@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class FeaturesController {
+public class ChooseTicketController {
     @Autowired
     private UserRepository userRepository;
-    @GetMapping("/Features")
-    public String Features(Model model) {
+    @GetMapping("/ChooseTicket")
+    public String ChooseTicket(Model model) {
         Iterable<User> users = userRepository.findAll();
         model.addAttribute("users", users);
-        return "Features";
+        return "ChooseTicket";
     }
 
 }

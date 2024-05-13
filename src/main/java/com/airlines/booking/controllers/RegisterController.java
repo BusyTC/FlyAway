@@ -20,7 +20,8 @@ public class RegisterController {
         return "Register";
     }
     @PostMapping("/Register")
-    public String RegisterSend(@RequestParam String first_name, @RequestParam String last_name, @RequestParam String email, @RequestParam String password, Model model) {
+    public String RegisterSend(@RequestParam String first_name, @RequestParam String last_name,
+                               @RequestParam String email, @RequestParam String password, Model model) {
         User user = new User(first_name, last_name, email, password);
         userRepository.save(user);
         return "redirect:/";
